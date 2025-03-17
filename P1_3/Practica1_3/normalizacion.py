@@ -11,11 +11,16 @@ def normalize_data(df):
     return pd.DataFrame(normalized_data, columns=df.columns)
 
 if __name__ == "__main__":
+
     file_path = "P1_3/Practica1_3/Mall_Customers.csv"
     output_path = "P1_3/Practica1_3/Selected_Mall_Customers.csv"
-    
+
     df = pd.read_csv(file_path)
+
     selected_df = select_features(df)
+
+    normalized_df = normalize_data(selected_df)
     
-    selected_df.to_csv(output_path, index=False)
+    normalized_df.to_csv(output_path, index=False)
+    
     print(f"Datos normalizados guardados en {output_path}")

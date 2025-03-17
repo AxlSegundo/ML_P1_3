@@ -19,7 +19,7 @@ def explore_data(df):
     print(df.isnull().sum())
 
     print("\nCurtosis y Asimetría:")
-    for col in ['Age', 'Annual Income (k$)', 'Spending Score (1-100)']:
+    for col in ['Annual Income (k$)', 'Spending Score (1-100)']:
         print(f"{col}:")
         print(f"  Curtosis: {kurtosis(df[col])}")
         print(f"  Asimetría: {skew(df[col])}")
@@ -39,16 +39,12 @@ def plot_distributions(df):
 
 def plot_boxplots(df):
     plt.figure(figsize=(12, 5))
-    
-    plt.subplot(1, 3, 1)
-    sns.boxplot(x=df['Age'], color='blue')
-    plt.title('Diagrama de Caja - Edad')
-    
-    plt.subplot(1, 3, 2)
+
+    plt.subplot(1, 2, 1)
     sns.boxplot(x=df['Annual Income (k$)'], color='green')
     plt.title('Diagrama de Caja - Ingreso Anual')
     
-    plt.subplot(1, 3, 3)
+    plt.subplot(1, 2, 2)
     sns.boxplot(x=df['Spending Score (1-100)'], color='orange')
     plt.title('Diagrama de Caja - Puntuación de Gasto')
     
