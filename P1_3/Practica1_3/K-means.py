@@ -48,7 +48,8 @@ def find_optimal_k(df, max_k=10):
     
     plt.tight_layout()
     plt.show()
-    
+
+#   optimal_k = k_values[davies_bouldin_scores.index(min(davies_bouldin_scores))]    
     optimal_k = k_values[silhouette_scores.index(max(silhouette_scores))]
     return optimal_k
 
